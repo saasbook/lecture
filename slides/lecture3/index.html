@@ -19,6 +19,69 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
@@ -32,58 +95,44 @@
       --r-heading3-size: 1.25em;
     }
 
-      .reveal {
-    font-family: "Work Sans", sans-serif;
-  }
+    .reveal {
+      font-family: "Work Sans", sans-serif;
+    }
 
-  .reveal .slides section {
-    text-align: left;
-    font-size: smaller;
-  }
+    .reveal .slides section {
+      text-align: left;
+      font-size: smaller;
+    }
 
-  .reveal pre {
-    background-color: #f5f5f5;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: none;
-  }
+    .reveal pre {
+      width: 95%;
+      font-size: 110%
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: none;
+    }
 
-  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-    font-family: "Roboto", sans-serif;
-    color: #0072c1;
-  }
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+      font-family: "Roboto", sans-serif;
+      color: #0072c1;
+    }
 
-  .reveal section.heading-only {
-    text-align:center;
-    padding-top:20%;
-  }
+    .reveal section.heading-only {
+      text-align:center;
+      padding-top:20%;
+    }
 
-        .column .no-code-badge .code-badge {
-            display: none;
-        }
+    .column .no-code-badge .code-badge {
+        display: none;
+    }
 
-        .code-badge-language {
-            display: none;
-        }
+    .code-badge-language {
+        display: none;
+    }
 
-  .python-tutor-link {
-    font-size: smaller;
-  }
-
-  .python-tutor-link:before {
-    content: "";
-    display: block;
-    background: url("http://pythontutor.com/favicon.ico") no-repeat;
-    width: 48px;
-    height: 48px;
-    float: left;
-    margin: 0 6px 0 0;
-  }
-
-  .reveal h3 {
-    margin-bottom: 40px;
-  }
+    .reveal h3 {
+      margin-bottom: 40px;
+    }
 
         .smaller {
             font-size: smaller;
@@ -91,7 +140,7 @@
 
         code {
             padding: 2px 4px;
-            font-size: 90%;
+            font-size: 120%;
             color: #0072c1;
             background-color: #f9f2f4;
             border-radius: 4px;
@@ -158,7 +207,7 @@
 </section>
 <section id="lets-talk-about-ruby" class="slide level1">
 <h1>Let’s Talk About Ruby…</h1>
-<video class="u-full-width" poster="/assets/posters/talks/wat.poster-4f5425901c10ffeaceb61f82e25dc40b9212aadf078cead0dc6ffe40696e2bec.png" preload="none" controls="">
+<video class="u-full-width" style="height:250px" poster="/assets/posters/talks/wat.poster-4f5425901c10ffeaceb61f82e25dc40b9212aadf078cead0dc6ffe40696e2bec.png" preload="none" controls="">
 <source src="https://destroyallsoftware-talks.s3.amazonaws.com/wat.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIKRVCECXBC4ZGHIQ%2F20210902%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210902T062957Z&amp;X-Amz-Expires=14400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ed0a96373bccd42447e31b44078aca415a0fd2bc40d1e4b9e233b074b18f0a15">
 <p><track label="English" kind="captions" srclang="en" src="/captions/talks/wat.vtt"> </video></p>
 <p><a href="https://www.destroyallsoftware.com/talks/wat">Gary Berndhart, Destroy All Software</a></p>
@@ -167,7 +216,152 @@
 <h1>Learning a new language</h1>
 </section>
 <section id="ruby" class="slide level1">
-<h1>Ruby:</h1>
+<h1>Ruby</h1>
+<p>Ruby is inspired by Smalltalk. It’s quite permissive, but has a few consistent rules.</p>
+<ul>
+<li><em>Everything</em> is an object.
+<ul>
+<li>Yes, even <code>Integer</code>.</li>
+</ul></li>
+<li><em>Metaprogramming</em> is common in Ruby.</li>
+<li><code>a.b</code> means calling the <strong>method</strong> <code>b</code> on object <code>a</code>.</li>
+<li><code>a + b</code> is the same as <code>a.+(b)</code>
+<ul>
+<li><code>a.b = 3</code> is calling a method!</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples" class="slide level1">
+<h1>Examples</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>grading_option <span class="kw">=</span> <span class="wa">:pass_fail</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>today <span class="kw">=</span> <span class="kw">{</span> <span class="cf">class</span>: <span class="vs">&#39;CS169&#39;</span>, <span class="wa">lang: </span><span class="vs">&#39;ruby&#39;</span> <span class="kw">}</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>people <span class="kw">=</span> <span class="kw">[</span><span class="vs">&#39;Harry&#39;</span>, <span class="vs">&#39;Ron&#39;</span>, <span class="vs">&#39;Hermione&#39;</span>, <span class="vs">&#39;Snape&#39;</span><span class="kw">]</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">def</span> give_bezos_money?(cost, balance)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  cost <span class="kw">&lt;</span> balance <span class="kw">/</span> <span class="dv">3</span> <span class="co"># alternatively, just: false</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+</section>
+<section id="examples-1" class="slide level1">
+<h1>Examples</h1>
+<div class="sourceCode" id="cb2"><pre class="sourceCode rb"><code class="sourceCode ruby"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A block</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span><span class="kw">]</span><span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>number<span class="kw">|</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">puts</span> <span class="st">&quot;MOAR! </span><span class="sc">#{</span>num<span class="kw">*</span><span class="dv">100</span><span class="sc">}</span><span class="st">&quot;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Another block</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span><span class="kw">]</span><span class="at">.map</span> <span class="kw">{</span> <span class="kw">|</span>number<span class="kw">|</span> number <span class="kw">*</span> <span class="dv">100</span> <span class="kw">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># A lambda!</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>shout <span class="kw">=</span> <span class="kw">-&gt;</span> (words) <span class="kw">{</span> words<span class="at">.upcase</span> <span class="kw">}</span></span></code></pre></div>
+<p>Random Note: A block is <em>not</em> an argument to the function.</p>
+</section>
+<section id="classes" class="slide level1">
+<h1>Classes</h1>
+<ul>
+<li>Ruby is an OO language, but embraces FP, too.</li>
+<li>Classes can be modified at any time!</li>
+<li>There is no (direct) access to instance variables.
+<ul>
+<li>We use getters and setters, <code>attr_reader</code>, <code>attr_writer</code>, <code>attr_accessor</code>.</li>
+</ul></li>
+<li>We can define an <code>initialize</code> method.</li>
+<li>We get a new class by calling <code>Class.new</code></li>
+<li><code>@instance_variable</code>, <code>@@class_variable</code>, <code>self</code></li>
+</ul>
+</section>
+<section id="class-example" class="slide level1">
+<h1>Class Example</h1>
+<div class="sourceCode" id="cb3"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">class</span> <span class="dt">Book</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="ot">@@total_books</span> <span class="kw">=</span> <span class="dv">0</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> initialize(title, author)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@title</span> <span class="kw">=</span> title</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@author</span> <span class="kw">=</span> author</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> title</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@title</span> <span class="co">#implict returns!</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> title<span class="kw">=</span>(value)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@title</span> <span class="kw">=</span> value</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> author</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@author</span> <span class="co">#implict returns!</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> author<span class="kw">=</span>(value)</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@author</span> <span class="kw">=</span> value</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+</section>
+<section id="metaprogramming-an-classes" class="slide level1">
+<h1>Metaprogramming an classes</h1>
+<ul>
+<li><code>attr_accessor</code> defines setters, getters, and the ivar.</li>
+<li><code>attr_reader</code> defines the getter and the ivar.</li>
+<li><code>attr_writer</code> define the setter and the ivar.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">class</span> <span class="dt">Book</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="ot">attr_accessor</span> <span class="wa">:title</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="ot">attr_accessor</span> <span class="wa">:author</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> print_at</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   <span class="fu">puts</span> <span class="st">&quot;Title </span><span class="sc">#{</span><span class="ot">@title</span><span class="sc">}</span><span class="st">&quot;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>   <span class="fu">puts</span> <span class="st">&quot;Author </span><span class="sc">#{</span><span class="ot">@author</span><span class="sc">}</span><span class="st">&quot;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> print_self</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">puts</span> <span class="st">&quot;Title </span><span class="sc">#{</span><span class="dv">self</span><span class="at">.title</span><span class="sc">}</span><span class="st">&quot;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">puts</span> <span class="st">&quot;Author </span><span class="sc">#{</span><span class="dv">self</span><span class="at">.author</span><span class="sc">}</span><span class="st">&quot;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> print_plain</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">puts</span> <span class="st">&quot;Title </span><span class="sc">#{</span>title<span class="sc">}</span><span class="st">&quot;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">puts</span> <span class="st">&quot;Author </span><span class="sc">#{</span>author<span class="sc">}</span><span class="st">&quot;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+</section>
+<section id="ruby-fun-things" class="slide level1">
+<h1>Ruby Fun Things</h1>
+</section>
+<section id="blocks-procs-and-labmdas.-oh-my" class="slide level1">
+<h1>Blocks, Procs, and Labmdas. Oh my!</h1>
+<p><a href="https://www.rubyguides.com/2016/02/ruby-procs-and-lambdas/"><strong>Read More</strong></a></p>
+<ul>
+<li>Blocks and Lambdas: Primary means of passing function-like control around</li>
+<li>Procs: Similar to lambdas, but the <code>return</code> applies to the caller. (See the above link for an example)</li>
+<li>Lambdas (and procs) are true closures. Yay!</li>
+</ul>
+</section>
+<section id="some-ruby-conventions" class="slide level1">
+<h1>Some Ruby Conventions</h1>
+<ul>
+<li>End methods with a <code>?</code> if they return a boolean.
+<ul>
+<li>Common style is to avoid <code>is_</code>, <code>has_</code> prefixes.</li>
+</ul></li>
+<li>End methods with a <code>!</code> if there be dragons.
+<ul>
+<li>Raises exceptions, mutations are the common cases.</li>
+</ul></li>
+</ul>
+</section>
+<section id="some-tips" class="slide level1">
+<h1>Some Tips</h1>
+<ul>
+<li>Don’t go overboard on the syntactic sugar.</li>
+<li>Be careful with mutations in the conditonal statement:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode rb"><code class="sourceCode ruby"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ot">@user</span> <span class="kw">=</span> lookup_user_from_somewhere</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  render <span class="wa">:hooray</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  render <span class="wa">:error</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+</section>
+<section id="rest-apis-more-saas" class="slide level1">
+<h1>REST, APIs More SaaS</h1>
 </section>
     </div>
   </div>
@@ -197,6 +391,21 @@
     </script>
     <script>
       Reveal.initialize({ center: false, width: '90%', height: '90%' })
+
+      // add HighlightJS-badge (options are optional)
+      const options = {
+        copyIconContent: "📄",
+        checkIconContent: "✅"
+      };
+      window.highlightJsBadge(options);
+
+      if (window.location.search == "?print-pdf") {
+        const uncounted = document.querySelectorAll("[data-visibility='uncounted']");
+        uncounted.forEach(node => {
+          node.parentNode.classList.add("no-print")
+        })
+      }
+
     </script>
     </body>
 </html>
