@@ -89,7 +89,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700"/>
   <style>
     :root {
-      --r-main-font-size: 36px;
+      --r-main-font-size: 40px;
       --r-heading1-size: 2.25em;
       --r-heading2-size: 1.75em;
       --r-heading3-size: 1.25em;
@@ -134,38 +134,36 @@
       margin-bottom: 40px;
     }
 
-        .smaller {
-            font-size: smaller;
-        }
-
-        code {
-            padding: 2px 4px;
-            font-size: 120%;
-            color: #0072c1;
-            background-color: #f9f2f4;
-            border-radius: 4px;
-        }
-
-        p.padded {
-            margin-top: 32px;
-        }
-
-        section .row {
-            display: flex;
-        }
-
-        section .column {
-            flex: 48%;
-            margin: 10px;
-        }
-
-  @media print
-  {
-    .no-print, .no-print *
-    {
-      display: none !important;
+    .smaller {
+        font-size: smaller;
     }
-  }
+
+    code {
+        padding: 2px 4px;
+        font-size: 120%;
+        color: #0072c1;
+        background-color: #f9f2f4;
+        border-radius: 4px;
+    }
+
+    p.padded {
+        margin-top: 32px;
+    }
+
+    section .row {
+        display: flex;
+    }
+
+    section .column {
+        flex: 48%;
+        margin: 10px;
+    }
+
+    @media print {
+      .no-print, .no-print * {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -190,6 +188,15 @@
 </section>
 <section id="logsticics" class="slide level1">
 <h1>Logsticics</h1>
+<ul>
+<li>CHIPS 2.5 Deadline Extended until Friday 11:59PM</li>
+<li>Module 1&amp;2 Quiz on Tuesday, 45 mins, 2pm. (No Lecture)
+<ul>
+<li>Zoom Links will be emailed to everyone</li>
+<li>Alternate times: Tuesday evening, Weds Moring</li>
+<li>Ed post coming soon.</li>
+</ul></li>
+</ul>
 </section>
 <section id="saas-in-the-old-but-not-really-news" class="slide level1">
 <h1>SaaS In The (Old, But Not Really) News</h1>
@@ -214,6 +221,17 @@
 </section>
 <section id="learning-a-new-language" class="slide level1">
 <h1>Learning a new language</h1>
+<p>(From the book!)</p>
+<ol type="1">
+<li>Types and typing.</li>
+<li>Primitives.</li>
+<li>Methods.</li>
+<li>Abstraction and Encapsulation.</li>
+<li>Idioms.</li>
+<li>Libraries.</li>
+<li>Debugging.</li>
+<li>Testing.</li>
+</ol>
 </section>
 <section id="ruby" class="slide level1">
 <h1>Ruby</h1>
@@ -244,7 +262,7 @@
 <section id="examples-1" class="slide level1">
 <h1>Examples</h1>
 <div class="sourceCode" id="cb2"><pre class="sourceCode rb"><code class="sourceCode ruby"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A block</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span><span class="kw">]</span><span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>number<span class="kw">|</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span><span class="kw">]</span><span class="at">.each</span> <span class="cf">do</span> <span class="kw">|</span>num<span class="kw">|</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">puts</span> <span class="st">&quot;MOAR! </span><span class="sc">#{</span>num<span class="kw">*</span><span class="dv">100</span><span class="sc">}</span><span class="st">&quot;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
@@ -277,31 +295,32 @@
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> initialize(title, author)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@title</span> <span class="kw">=</span> title</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@author</span> <span class="kw">=</span> author</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> title</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@title</span> <span class="co">#implict returns!</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> title<span class="kw">=</span>(value)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@title</span> <span class="kw">=</span> value</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> author</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@author</span> <span class="co">#implict returns!</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> author<span class="kw">=</span>(value)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@author</span> <span class="kw">=</span> value</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@@total_books</span> <span class="kw">+=</span> <span class="dv">1</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> title</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@title</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> title<span class="kw">=</span>(value)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@title</span> <span class="kw">=</span> value</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> author</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@author</span> <span class="co"># these methods use implict returns!</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="cf">def</span> author<span class="kw">=</span>(value)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="ot">@author</span> <span class="kw">=</span> value</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">end</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span></code></pre></div>
 </section>
 <section id="metaprogramming-an-classes" class="slide level1">
 <h1>Metaprogramming an classes</h1>
 <ul>
-<li><code>attr_accessor</code> defines setters, getters, and the ivar.</li>
-<li><code>attr_reader</code> defines the getter and the ivar.</li>
-<li><code>attr_writer</code> define the setter and the ivar.</li>
+<li><code>attr_accessor</code> defines setters, getters, and the instance variables.</li>
+<li><code>attr_reader</code> defines the getter and the instance variables.</li>
+<li><code>attr_writer</code> define the setter and the instance variables.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">class</span> <span class="dt">Book</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="ot">attr_accessor</span> <span class="wa">:title</span></span>
@@ -363,6 +382,34 @@
 <section id="rest-apis-more-saas" class="slide level1">
 <h1>REST, APIs More SaaS</h1>
 </section>
+<section id="rest" class="slide level1">
+<h1>REST</h1>
+<p>“Representatitonal State Transfer”</p>
+<p>A Kind of Meaningless name, but a powerful concept.</p>
+<p>A <strong>route</strong> is a verb (HTTP Method) and a path.</p>
+<p>We use “nesting” in a path to communicate hierarchy.</p>
+</section>
+<section id="a-brief-rant-about-urls." class="slide level1">
+<h1>A Brief Rant About URLs.</h1>
+<p>“Uniform Resource Locators”</p>
+<p>A URL idetifies an entity, a praticular concept.</p>
+<p>Don’t break the web. :(</p>
+</section>
+<section id="themoviedb" class="slide level1">
+<h1>TheMovieDB</h1>
+<pre><code>curl https://api.themoviedb.org/3/movie/550?api_key=6c22b5cc0c1957087d270e1f9be93f37</code></pre>
+</section>
+<section id="basic-http-requests-in-ruby" class="slide level1">
+<h1>(Basic) HTTP Requests in Ruby</h1>
+<p><a href="https://www.rubyguides.com/2018/08/ruby-http-request/">Many Ways to make requests</a></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span> <span class="vs">&#39;net/http&#39;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="dt">Net</span><span class="kw">::</span><span class="cn">HTTP</span><span class="at">.get</span>(<span class="vs">&#39;example.com&#39;</span>, <span class="vs">&#39;/index.html&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode ruby"><code class="sourceCode ruby"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>net <span class="kw">=</span> <span class="dt">Net</span><span class="kw">::</span><span class="cn">HTTP</span><span class="at">.new</span>(<span class="st">&quot;example.com&quot;</span>, <span class="dv">443</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>net<span class="at">.use_ssl</span> <span class="kw">=</span> <span class="dv">true</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>net<span class="at">.get_response</span>(<span class="st">&quot;/&quot;</span>)</span></code></pre></div>
+</section>
     </div>
   </div>
 
@@ -390,7 +437,7 @@
       });
     </script>
     <script>
-      Reveal.initialize({ center: false, width: '90%', height: '90%' })
+      Reveal.initialize({ center: true, width: '90%', height: '90%' })
 
       // add HighlightJS-badge (options are optional)
       const options = {

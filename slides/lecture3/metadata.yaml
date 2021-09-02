@@ -11,7 +11,7 @@ slide-level: 2
 header-includes: |
   <style>
     :root {
-      --r-main-font-size: 36px;
+      --r-main-font-size: 40px;
       --r-heading1-size: 2.25em;
       --r-heading2-size: 1.75em;
       --r-heading3-size: 1.25em;
@@ -56,45 +56,43 @@ header-includes: |
       margin-bottom: 40px;
     }
 
-        .smaller {
-            font-size: smaller;
-        }
-
-        code {
-            padding: 2px 4px;
-            font-size: 120%;
-            color: #0072c1;
-            background-color: #f9f2f4;
-            border-radius: 4px;
-        }
-
-        p.padded {
-            margin-top: 32px;
-        }
-
-        section .row {
-            display: flex;
-        }
-
-        section .column {
-            flex: 48%;
-            margin: 10px;
-        }
-
-  @media print
-  {
-    .no-print, .no-print *
-    {
-      display: none !important;
+    .smaller {
+        font-size: smaller;
     }
-  }
+
+    code {
+        padding: 2px 4px;
+        font-size: 120%;
+        color: #0072c1;
+        background-color: #f9f2f4;
+        border-radius: 4px;
+    }
+
+    p.padded {
+        margin-top: 32px;
+    }
+
+    section .row {
+        display: flex;
+    }
+
+    section .column {
+        flex: 48%;
+        margin: 10px;
+    }
+
+    @media print {
+      .no-print, .no-print * {
+        display: none !important;
+      }
+    }
   </style>
 center: false
 # width: "90%"
 # height: "90%"
 include-after: |
   <script>
-    Reveal.initialize({ center: false, width: '90%', height: '90%' })
+    Reveal.initialize({ center: true, width: '90%', height: '90%' })
 
     // add HighlightJS-badge (options are optional)
     const options = {

@@ -80,7 +80,7 @@ end
 
 ```rb
 # A block
-[1, 2, 3].each do |number|
+[1, 2, 3].each do |num|
   puts "MOAR! #{num*100}"
 end
 
@@ -111,10 +111,11 @@ class Book
   def initialize(title, author)
     @title = title
     @author = author
+    @@total_books += 1
   end
 
   def title
-    @title #implict returns!
+    @title
   end
 
   def title=(value)
@@ -122,7 +123,7 @@ class Book
   end
 
   def author
-    @author #implict returns!
+    @author # these methods use implict returns!
   end
 
   def author=(value)
@@ -133,9 +134,9 @@ end
 
 # Metaprogramming an classes
 
-* `attr_accessor` defines setters, getters, and the ivar.
-* `attr_reader` defines the getter and the ivar.
-* `attr_writer` define the setter and the ivar.
+* `attr_accessor` defines setters, getters, and the instance variables.
+* `attr_reader` defines the getter and the instance variables.
+* `attr_writer` define the setter and the instance variables.
 
 ```ruby
 class Book
@@ -216,3 +217,18 @@ curl https://api.themoviedb.org/3/movie/550?api_key=6c22b5cc0c1957087d270e1f9be9
 ```
 
 # (Basic) HTTP Requests in Ruby
+
+[Many Ways to make requests](https://www.rubyguides.com/2018/08/ruby-http-request/)
+
+```ruby
+require 'net/http'
+
+Net::HTTP.get('example.com', '/index.html')
+```
+
+```ruby
+net = Net::HTTP.new("example.com", 443)
+
+net.use_ssl = true
+net.get_response("/")
+```
