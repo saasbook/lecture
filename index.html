@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Live Lecture + Q&A</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Live Lecture</a>
+        <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <div class="" id="navbarText"> <!-- collapse navbar-collapse -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link js-zoomNewTab" href="#" target="_blank">Zoom</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-edURL" href="#" target="_blank">Ed</a>
+            </li>
+          </ul>
+      </div>
+    </nav>
+    <iframe
+    frameborder="0"
+    src="#"
+    class="js-embed js-zoomEmbed"></iframe>
+    <!-- <div style="width: 33%"> -->
+      <!-- <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Ed Q&A</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Discord Chat</a>
+        </li>
+      </ul> -->
+      <iframe
+      frameborder="0"
+      src="#"
+      class="js-embed js-edEmbed"></iframe>
+    <!-- </div> -->
+    <script type="text/javascript">
+      let cs169 = {
+        ed: 'https://edstem.org/us/courses/8667/discussion/582494',
+        meeting: '98524952299',
+        pwd: 'bURsVGVMa0wyeUdhNEhveDJGRHRhQT09'
+      };
+      function zoomURL(id, pwd) {
+        return `https://berkeley.zoom.us/j/${id}?pwd=${pwd}`;
+      }
+
+      function zoomEmbedURL(id, pwd) {
+        return `https://berkeley.zoom.us/wc/${id}/join?pwd=${pwd}`;
+      }
+
+      $(document).ready(() => {
+        $('.js-edURL').attr('href', cs169.ed)
+        $('.js-edEmbed').attr('src', `${cs169.ed}?chrome=0`)
+        $('.js-zoomURL').attr('href', zoomURL(cs169.meeting, cs169.pwd))
+        $('.js-zoomEmbed').attr('src', zoomEmbedURL(cs169.meeting, cs169.pwd))
+        let width = document.body.clientWidth;
+        let height = `${window.innerHeight - $('nav').height()}px`;
+        $('.js-zoomEmbed').attr('width', `${(width*.66)-1}px`).attr('height', height);
+        $('.js-edEmbed').attr('width', `${(width*.33)}px`).attr('height', height);
+      })
+    </script>
+  </body>
+</html>
