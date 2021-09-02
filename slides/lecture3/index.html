@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Michael Ball">
+  <meta name="author" content="Pamela Fox">
+  <meta name="dcterms.date" content="2021-09-02">
+  <title>Lecture 3: Ruby &amp; SaaS</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="https://cs61a.org/assets/css/mono-blue.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700"/>
+  <style>
+    :root {
+      --r-main-font-size: 36px;
+      --r-heading1-size: 2.25em;
+      --r-heading2-size: 1.75em;
+      --r-heading3-size: 1.25em;
+    }
+
+      .reveal {
+    font-family: "Work Sans", sans-serif;
+  }
+
+  .reveal .slides section {
+    text-align: left;
+    font-size: smaller;
+  }
+
+  .reveal pre {
+    background-color: #f5f5f5;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    font-family: "Roboto", sans-serif;
+    color: #0072c1;
+  }
+
+  .reveal section.heading-only {
+    text-align:center;
+    padding-top:20%;
+  }
+
+        .column .no-code-badge .code-badge {
+            display: none;
+        }
+
+        .code-badge-language {
+            display: none;
+        }
+
+  .python-tutor-link {
+    font-size: smaller;
+  }
+
+  .python-tutor-link:before {
+    content: "";
+    display: block;
+    background: url("http://pythontutor.com/favicon.ico") no-repeat;
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin: 0 6px 0 0;
+  }
+
+  .reveal h3 {
+    margin-bottom: 40px;
+  }
+
+        .smaller {
+            font-size: smaller;
+        }
+
+        code {
+            padding: 2px 4px;
+            font-size: 90%;
+            color: #0072c1;
+            background-color: #f9f2f4;
+            border-radius: 4px;
+        }
+
+        p.padded {
+            margin-top: 32px;
+        }
+
+        section .row {
+            display: flex;
+        }
+
+        section .column {
+            flex: 48%;
+            margin: 10px;
+        }
+
+  @media print
+  {
+    .no-print, .no-print *
+    {
+      display: none !important;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Lecture 3: Ruby &amp; SaaS</h1>
+  <p class="subtitle">CS169A, Fall 2021</p>
+  <p class="author">Michael Ball</p>
+  <p class="author">Pamela Fox</p>
+  <p class="date">September 2, 2021</p>
+</section>
+
+<section id="todays-topics" class="slide level1">
+<h1>Today’s Topics</h1>
+<ul>
+<li>Learning a New Language</li>
+<li>Playing Around with Ruby</li>
+<li>APIs / REST / More SaaS</li>
+</ul>
+</section>
+<section id="logsticics" class="slide level1">
+<h1>Logsticics</h1>
+</section>
+<section id="saas-in-the-old-but-not-really-news" class="slide level1">
+<h1>SaaS In The (Old, But Not Really) News</h1>
+<p>“10 Lesser Known DOM APIs you may want to use” https://blog.greenroots.info/10-lesser-known-web-apis-you-may-want-to-use-ckejv75cr012y70s158n85yhn via https://weekly.statuscode.com</p>
+<h3 id="highlights">Highlights:</h3>
+<ul>
+<li>Async Clipboard API</li>
+<li>Battery Status API</li>
+<li>Performance API</li>
+<li>Broadcast Channel API</li>
+</ul>
+</section>
+<section id="qa" class="slide level1">
+<h1>Q&amp;A</h1>
+</section>
+<section id="lets-talk-about-ruby" class="slide level1">
+<h1>Let’s Talk About Ruby…</h1>
+<video class="u-full-width" poster="/assets/posters/talks/wat.poster-4f5425901c10ffeaceb61f82e25dc40b9212aadf078cead0dc6ffe40696e2bec.png" preload="none" controls="">
+<source src="https://destroyallsoftware-talks.s3.amazonaws.com/wat.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAIKRVCECXBC4ZGHIQ%2F20210902%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210902T062957Z&amp;X-Amz-Expires=14400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ed0a96373bccd42447e31b44078aca415a0fd2bc40d1e4b9e233b074b18f0a15">
+<p><track label="English" kind="captions" srclang="en" src="/captions/talks/wat.vtt"> </video></p>
+<p><a href="https://www.destroyallsoftware.com/talks/wat">Gary Berndhart, Destroy All Software</a></p>
+</section>
+<section id="learning-a-new-language" class="slide level1">
+<h1>Learning a new language</h1>
+</section>
+<section id="ruby" class="slide level1">
+<h1>Ruby:</h1>
+</section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script>
+      Reveal.initialize({ center: false, width: '90%', height: '90%' })
+    </script>
+    </body>
+</html>

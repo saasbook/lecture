@@ -1,0 +1,114 @@
+---
+subtitle: CS169A, Fall 2021
+date: September 2, 2021
+author:
+  - Michael Ball
+  - Pamela Fox
+css:
+  - 'https://cs61a.org/assets/css/mono-blue.css'
+  - 'https://fonts.googleapis.com/css?family=Inconsolata|Roboto:300,400,500|Work+Sans:400,700'
+slide-level: 2
+header-includes: |
+  <style>
+    :root {
+      --r-main-font-size: 36px;
+      --r-heading1-size: 2.25em;
+      --r-heading2-size: 1.75em;
+      --r-heading3-size: 1.25em;
+    }
+
+      .reveal {
+    font-family: "Work Sans", sans-serif;
+  }
+
+  .reveal .slides section {
+    text-align: left;
+    font-size: smaller;
+  }
+
+  .reveal pre {
+    background-color: #f5f5f5;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    font-family: "Roboto", sans-serif;
+    color: #0072c1;
+  }
+
+  .reveal section.heading-only {
+    text-align:center;
+    padding-top:20%;
+  }
+
+        .column .no-code-badge .code-badge {
+            display: none;
+        }
+
+        .code-badge-language {
+            display: none;
+        }
+
+  .python-tutor-link {
+    font-size: smaller;
+  }
+
+  .python-tutor-link:before {
+    content: "";
+    display: block;
+    background: url("http://pythontutor.com/favicon.ico") no-repeat;
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin: 0 6px 0 0;
+  }
+
+  .reveal h3 {
+    margin-bottom: 40px;
+  }
+
+        .smaller {
+            font-size: smaller;
+        }
+
+        code {
+            padding: 2px 4px;
+            font-size: 90%;
+            color: #0072c1;
+            background-color: #f9f2f4;
+            border-radius: 4px;
+        }
+
+        p.padded {
+            margin-top: 32px;
+        }
+
+        section .row {
+            display: flex;
+        }
+
+        section .column {
+            flex: 48%;
+            margin: 10px;
+        }
+
+  @media print
+  {
+    .no-print, .no-print *
+    {
+      display: none !important;
+    }
+  }
+  </style>
+center: false
+# width: "90%"
+# height: "90%"
+include-after: |
+  <script>
+    Reveal.initialize({ center: false, width: '90%', height: '90%' })
+  </script>
+
+---
